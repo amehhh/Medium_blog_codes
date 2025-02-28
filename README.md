@@ -6,3 +6,11 @@ Code for my blogs on Medium can be accessed via this repository .
 1. Clone this repository:
    ```bash
    git clone https://github.com/amehhh/medium-blog-codes.git
+## 📢 Follow Me
+
+You can follow me on my social media:
+
+- 📝 [Medium Profile](https://medium.com/@your-username)
+- 🐦 [Twitter](https://x.com/AmehEmmanuelSu1)
+- 💼 [LinkedIn](https://www.linkedin.com/in/amehes/)
+
