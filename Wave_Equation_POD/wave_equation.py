@@ -35,9 +35,8 @@ t = 0                            # Initialize time
 # -----------------------
 snapshots = []
 
-# -----------------------
+
 # Set up the figure and axes for plotting
-# -----------------------
 fig, axes = plt.subplots(2, 1, figsize=(8, 8))           # Create 2 subplots
 fig.subplots_adjust(hspace=0.3)                          # Adjust vertical spacing
 
