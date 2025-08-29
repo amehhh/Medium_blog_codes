@@ -3,9 +3,8 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from mpl_toolkits.mplot3d import Axes3D
 
-# -----------------------
+
 # Define the simulation domain
-# -----------------------
 Lx, Ly = 10, 10                   # Domain dimensions
 dx, dy = 0.1, 0.1                 # Grid spacing
 nx, ny = int(Lx / dx), int(Ly / dy)  # Number of grid points
