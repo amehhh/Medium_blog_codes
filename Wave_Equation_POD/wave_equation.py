@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from mpl_toolkits.mplot3d import Axes3D
 
-
 # Define the simulation domain
 Lx, Ly = 10, 10                   # Domain dimensions
 dx, dy = 0.1, 0.1                 # Grid spacing
@@ -12,26 +11,20 @@ x = np.linspace(0, Lx, nx)       # X-axis grid
 y = np.linspace(0, Ly, ny)       # Y-axis grid
 print(x[0])                      # Print first x value (for check)
 
-# -----------------------
 # Set simulation parameters
-# -----------------------
 T = 100                          # Total simulation time
 CFL = 0.5                        # Courant number
 c = 1                            # Wave speed
 dt = (CFL * dx / c)              # Time step based on CFL
 
-# -----------------------
 # Initialize field variables
-# -----------------------
 current = np.zeros((nx, ny))     # Current time step values
 print(f"The shape of the current flow is {current.shape}")
 previous = current.copy()        # Previous time step values
 next = current.copy()            # Next time step values
 t = 0                            # Initialize time
 
-# -----------------------
 # Store snapshots for POD
-# -----------------------
 snapshots = []
 
 
@@ -55,9 +48,7 @@ ax2.set_zlim(-0.05, 0.05)
 
 fig.tight_layout()  # Adjust overall layout
 
-# -----------------------
-# Animation update function
-# -----------------------
+#Update Animation function 
 def update(frame):
     global current, previous, next, t, snapshots
 
