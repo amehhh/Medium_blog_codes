@@ -84,17 +84,13 @@ def update(frame):
     ax2.plot_surface(X, Y, current.T, cmap='jet')
     ax2.set_zlim(-0.05, 0.05)
 
-# -----------------------
 # Run the animation
-# -----------------------
 ani = FuncAnimation(fig, update, frames=199, interval=50, repeat=False)
 plt.show()
 
-# -----------------------
-# POD (Proper Orthogonal Decomposition) Analysis
-# -----------------------
 
-# Convert list of snapshots to NumPy array (columns = time steps)
+# POD (Proper Orthogonal Decomposition) Analysis
+# Convert list of snapshots to NumPy array (columns = time steps) and Rows (State variables)
 snapshots = np.array(snapshots).T
 print(f"The shape of snapshots after simulation is {snapshots.shape}")
 
@@ -105,9 +101,8 @@ print(f"Vt shape is {Vt.shape}")
 print(f"The shape of U is {U.shape}")
 print(f"The shape of S is {S.shape}")
 
-# -----------------------
+
 # Plot the first few temporal POD modes
-# -----------------------
 plt.figure(figsize=(8, 4))
 plt.plot(Vt[0, :], label='1st POD mode')
 plt.plot(Vt[1, :], label='2nd POD mode')
@@ -141,9 +136,8 @@ plt.title('Temporal POD Modes')
 plt.legend()
 plt.show()
 
-# -----------------------
+
 # Plot singular values (energy of each mode)
-# -----------------------
 plt.figure(figsize=(6, 3))
 plt.figure(1)
 plt.semilogy(S)
@@ -152,9 +146,8 @@ plt.xlabel("Singular values j in descending order")
 plt.ylabel("Energy (Singular values)")
 plt.show()
 
-# -----------------------
+
 # Determine optimal number of modes for 90% energy
-# -----------------------
 energy_contributions = np.cumsum(S) / np.sum(S)
 k_optimal = np.argmax(energy_contributions >= 0.9) + 1
 print(f"Number of modes needed to capture 90% of the energy: {k_optimal}")
@@ -187,9 +180,7 @@ plt.ylabel("Y-axis (grid points)")
 plt.title(f"Rank k = {k_optimal} Approximation of the Flow at Last Time Step")
 plt.show()
 
-# -----------------------
 # Plot difference between full and approximated flow
-# -----------------------
 diff_matrix = snapshots[:, -1] - k_optimal_full_matrix[:, -1]
 im2 = plt.imshow(diff_matrix.reshape(100, 100), cmap='coolwarm', origin='lower')
 im2.set_clim(-0.02, 0.02)
@@ -197,9 +188,7 @@ plt.colorbar(label="Difference Magnitude")
 plt.title("Difference Between Full Flow and Rank-k = 21 Approximation")
 plt.show()
 
-# -----------------------
 # Plot first spatial POD mode
-# -----------------------
 first_spatial = U[:, 0]
 im2 = plt.imshow(first_spatial.reshape(100, 100), cmap='coolwarm', origin='lower')
 im2.set_clim(-0.02, 0.02)
