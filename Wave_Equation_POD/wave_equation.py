@@ -157,18 +157,16 @@ sigma_k_optimal = S[:k_optimal]
 u_k_optimal = U[:, :k_optimal]
 v_k_optimal = Vt[:k_optimal, :]
 
-# -----------------------
+
 # Reconstruct the flow using k_optimal modes
-# -----------------------
 k_optimal_full_matrix = u_k_optimal @ np.diag(sigma_k_optimal) @ v_k_optimal
 
 # Compute relative error for last time step
 error = np.linalg.norm(snapshots[:, -1] - k_optimal_full_matrix[:, -1]) / np.linalg.norm(snapshots[:, -1])
 print(f"Relative error at the last time step: {error:.4f}")
 
-# -----------------------
+
 # Plot reconstructed flow at last time step
-# -----------------------
 k_optimal_lastsnapshot = k_optimal_full_matrix[:, 199].reshape(100, 100)
 
 plt.figure(figsize=(8, 6))
