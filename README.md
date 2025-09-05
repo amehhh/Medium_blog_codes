@@ -10,7 +10,7 @@ Code for my blogs on Medium can be accessed via this repository .
 
 You can follow me on my social media:
 
-- 📝 [Medium Profile](https://medium.com/@your-username)
+- 📝 [Medium Profile](https://medium.com/@amehsunday178)
 - 🐦 [Twitter](https://x.com/AmehEmmanuelSu1)
 - 💼 [LinkedIn](https://www.linkedin.com/in/amehes/)
 
